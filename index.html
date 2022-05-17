@@ -41,7 +41,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[19.029439529379154,-99.6306806487778],[19.598771156874015,-98.65804444454514]]);
+        }).fitBounds([[19.029439529379154,-99.62127020865393],[19.598771156874015,-98.64863400442127]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -76,25 +76,7 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['gid'] !== null ? autolinker.link(feature.properties['gid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cvegeo'] !== null ? autolinker.link(feature.properties['cvegeo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cve_ent'] !== null ? autolinker.link(feature.properties['cve_ent'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cve_mun'] !== null ? autolinker.link(feature.properties['cve_mun'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2">' + (feature.properties['nomgeo'] !== null ? autolinker.link(feature.properties['nomgeo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['geo_alcald'] !== null ? autolinker.link(feature.properties['geo_alcald'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['nombre_upp'] !== null ? autolinker.link(feature.properties['nombre_upp'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['zona'] !== null ? autolinker.link(feature.properties['zona'].toLocaleString()) : '') + '</td>\
@@ -113,7 +95,7 @@
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
-                interactive: false,
+                interactive: true,
             }
         }
         map.createPane('pane_alcaldiasalcaldias_cdmx_1');
@@ -121,7 +103,7 @@
         map.getPane('pane_alcaldiasalcaldias_cdmx_1').style['mix-blend-mode'] = 'normal';
         var layer_alcaldiasalcaldias_cdmx_1 = new L.geoJson(json_alcaldiasalcaldias_cdmx_1, {
             attribution: '',
-            interactive: false,
+            interactive: true,
             dataVar: 'json_alcaldiasalcaldias_cdmx_1',
             layerName: 'layer_alcaldiasalcaldias_cdmx_1',
             pane: 'pane_alcaldiasalcaldias_cdmx_1',
@@ -145,27 +127,11 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">ID</th>\
-                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ENTIDAD</th>\
-                        <td>' + (feature.properties['ENTIDAD'] !== null ? autolinker.link(feature.properties['ENTIDAD'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">MUNICIPIO</th>\
                         <td>' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(feature.properties['MUNICIPIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>SECCION</strong><br />' + (feature.properties['SECCION'] !== null ? autolinker.link(feature.properties['SECCION'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">TIPO</th>\
-                        <td>' + (feature.properties['TIPO'] !== null ? autolinker.link(feature.properties['TIPO'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CONTROL</th>\
-                        <td>' + (feature.properties['CONTROL'] !== null ? autolinker.link(feature.properties['CONTROL'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -237,7 +203,7 @@
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
-                interactive: false,
+                interactive: true,
             }
         }
         map.createPane('pane_cdmx09ent_3');
@@ -245,7 +211,7 @@
         map.getPane('pane_cdmx09ent_3').style['mix-blend-mode'] = 'normal';
         var layer_cdmx09ent_3 = new L.geoJson(json_cdmx09ent_3, {
             attribution: '',
-            interactive: false,
+            interactive: true,
             dataVar: 'json_cdmx09ent_3',
             layerName: 'layer_cdmx09ent_3',
             pane: 'pane_cdmx09ent_3',
