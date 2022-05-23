@@ -30,10 +30,10 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/alcaldiasalcaldias_cdmx_1.js"></script>
-        <script src="data/SECCION_2.js"></script>
-        <script src="data/cdmx09ent_3.js"></script>
-        <script src="data/sec_territorial_4.js"></script>
+        <script src="data/LmiteCDMX_1.js"></script>
+        <script src="data/Alcaldias_2.js"></script>
+        <script src="data/Cordinaciones_3.js"></script>
+        <script src="data/Seccionesprioritarias_4.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -62,112 +62,7 @@
         });
         layer_CartoPositron_0;
         map.addLayer(layer_CartoPositron_0);
-        function pop_alcaldiasalcaldias_cdmx_1(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['nomgeo'] !== null ? autolinker.link(feature.properties['nomgeo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['zona'] !== null ? autolinker.link(feature.properties['zona'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_alcaldiasalcaldias_cdmx_1_0() {
-            return {
-                pane: 'pane_alcaldiasalcaldias_cdmx_1',
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 2.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_alcaldiasalcaldias_cdmx_1');
-        map.getPane('pane_alcaldiasalcaldias_cdmx_1').style.zIndex = 401;
-        map.getPane('pane_alcaldiasalcaldias_cdmx_1').style['mix-blend-mode'] = 'normal';
-        var layer_alcaldiasalcaldias_cdmx_1 = new L.geoJson(json_alcaldiasalcaldias_cdmx_1, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_alcaldiasalcaldias_cdmx_1',
-            layerName: 'layer_alcaldiasalcaldias_cdmx_1',
-            pane: 'pane_alcaldiasalcaldias_cdmx_1',
-            onEachFeature: pop_alcaldiasalcaldias_cdmx_1,
-            style: style_alcaldiasalcaldias_cdmx_1_0,
-        });
-        bounds_group.addLayer(layer_alcaldiasalcaldias_cdmx_1);
-        map.addLayer(layer_alcaldiasalcaldias_cdmx_1);
-        function pop_SECCION_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">MUNICIPIO</th>\
-                        <td>' + (feature.properties['MUNICIPIO'] !== null ? autolinker.link(feature.properties['MUNICIPIO'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>SECCION</strong><br />' + (feature.properties['SECCION'] !== null ? autolinker.link(feature.properties['SECCION'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_SECCION_2_0() {
-            return {
-                pane: 'pane_SECCION_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(170,6,28,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_SECCION_2');
-        map.getPane('pane_SECCION_2').style.zIndex = 402;
-        map.getPane('pane_SECCION_2').style['mix-blend-mode'] = 'normal';
-        var layer_SECCION_2 = new L.geoJson(json_SECCION_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_SECCION_2',
-            layerName: 'layer_SECCION_2',
-            pane: 'pane_SECCION_2',
-            onEachFeature: pop_SECCION_2,
-            style: style_SECCION_2_0,
-        });
-        bounds_group.addLayer(layer_SECCION_2);
-        map.addLayer(layer_SECCION_2);
-        function pop_cdmx09ent_3(feature, layer) {
+        function pop_LmiteCDMX_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -194,9 +89,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_cdmx09ent_3_0() {
+        function style_LmiteCDMX_1_0() {
             return {
-                pane: 'pane_cdmx09ent_3',
+                pane: 'pane_LmiteCDMX_1',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -207,21 +102,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_cdmx09ent_3');
-        map.getPane('pane_cdmx09ent_3').style.zIndex = 403;
-        map.getPane('pane_cdmx09ent_3').style['mix-blend-mode'] = 'normal';
-        var layer_cdmx09ent_3 = new L.geoJson(json_cdmx09ent_3, {
+        map.createPane('pane_LmiteCDMX_1');
+        map.getPane('pane_LmiteCDMX_1').style.zIndex = 401;
+        map.getPane('pane_LmiteCDMX_1').style['mix-blend-mode'] = 'normal';
+        var layer_LmiteCDMX_1 = new L.geoJson(json_LmiteCDMX_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_cdmx09ent_3',
-            layerName: 'layer_cdmx09ent_3',
-            pane: 'pane_cdmx09ent_3',
-            onEachFeature: pop_cdmx09ent_3,
-            style: style_cdmx09ent_3_0,
+            dataVar: 'json_LmiteCDMX_1',
+            layerName: 'layer_LmiteCDMX_1',
+            pane: 'pane_LmiteCDMX_1',
+            onEachFeature: pop_LmiteCDMX_1,
+            style: style_LmiteCDMX_1_0,
         });
-        bounds_group.addLayer(layer_cdmx09ent_3);
-        map.addLayer(layer_cdmx09ent_3);
-        function pop_sec_territorial_4(feature, layer) {
+        bounds_group.addLayer(layer_LmiteCDMX_1);
+        map.addLayer(layer_LmiteCDMX_1);
+        function pop_Alcaldias_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -236,10 +131,7 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2"><strong>delegacion</strong><br />' + (feature.properties['delegacion'] !== null ? autolinker.link(feature.properties['delegacion'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['nombre'] !== null ? autolinker.link(feature.properties['nombre'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['nomgeo'] !== null ? autolinker.link(feature.properties['nomgeo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['zona'] !== null ? autolinker.link(feature.properties['zona'].toLocaleString()) : '') + '</td>\
@@ -248,9 +140,66 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_sec_territorial_4_0() {
+        function style_Alcaldias_2_0() {
             return {
-                pane: 'pane_sec_territorial_4',
+                pane: 'pane_Alcaldias_2',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Alcaldias_2');
+        map.getPane('pane_Alcaldias_2').style.zIndex = 402;
+        map.getPane('pane_Alcaldias_2').style['mix-blend-mode'] = 'normal';
+        var layer_Alcaldias_2 = new L.geoJson(json_Alcaldias_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Alcaldias_2',
+            layerName: 'layer_Alcaldias_2',
+            pane: 'pane_Alcaldias_2',
+            onEachFeature: pop_Alcaldias_2,
+            style: style_Alcaldias_2_0,
+        });
+        bounds_group.addLayer(layer_Alcaldias_2);
+        map.addLayer(layer_Alcaldias_2);
+        function pop_Cordinaciones_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">delegacion</th>\
+                        <td>' + (feature.properties['delegacion'] !== null ? autolinker.link(feature.properties['delegacion'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">nombre</th>\
+                        <td>' + (feature.properties['nombre'] !== null ? autolinker.link(feature.properties['nombre'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">zona</th>\
+                        <td>' + (feature.properties['zona'] !== null ? autolinker.link(feature.properties['zona'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Cordinaciones_3_0() {
+            return {
+                pane: 'pane_Cordinaciones_3',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -261,32 +210,82 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_sec_territorial_4');
-        map.getPane('pane_sec_territorial_4').style.zIndex = 404;
-        map.getPane('pane_sec_territorial_4').style['mix-blend-mode'] = 'normal';
-        var layer_sec_territorial_4 = new L.geoJson(json_sec_territorial_4, {
+        map.createPane('pane_Cordinaciones_3');
+        map.getPane('pane_Cordinaciones_3').style.zIndex = 403;
+        map.getPane('pane_Cordinaciones_3').style['mix-blend-mode'] = 'normal';
+        var layer_Cordinaciones_3 = new L.geoJson(json_Cordinaciones_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_sec_territorial_4',
-            layerName: 'layer_sec_territorial_4',
-            pane: 'pane_sec_territorial_4',
-            onEachFeature: pop_sec_territorial_4,
-            style: style_sec_territorial_4_0,
+            dataVar: 'json_Cordinaciones_3',
+            layerName: 'layer_Cordinaciones_3',
+            pane: 'pane_Cordinaciones_3',
+            onEachFeature: pop_Cordinaciones_3,
+            style: style_Cordinaciones_3_0,
         });
-        bounds_group.addLayer(layer_sec_territorial_4);
-        map.addLayer(layer_sec_territorial_4);
+        bounds_group.addLayer(layer_Cordinaciones_3);
+        map.addLayer(layer_Cordinaciones_3);
+        function pop_Seccionesprioritarias_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>SECCION</strong><br />' + (feature.properties['SECCION'] !== null ? autolinker.link(feature.properties['SECCION'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Seccionesprioritarias_4_0() {
+            return {
+                pane: 'pane_Seccionesprioritarias_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(170,6,28,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Seccionesprioritarias_4');
+        map.getPane('pane_Seccionesprioritarias_4').style.zIndex = 404;
+        map.getPane('pane_Seccionesprioritarias_4').style['mix-blend-mode'] = 'normal';
+        var layer_Seccionesprioritarias_4 = new L.geoJson(json_Seccionesprioritarias_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Seccionesprioritarias_4',
+            layerName: 'layer_Seccionesprioritarias_4',
+            pane: 'pane_Seccionesprioritarias_4',
+            onEachFeature: pop_Seccionesprioritarias_4,
+            style: style_Seccionesprioritarias_4_0,
+        });
+        bounds_group.addLayer(layer_Seccionesprioritarias_4);
+        map.addLayer(layer_Seccionesprioritarias_4);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/sec_territorial_4.png" /> sec_territorial': layer_sec_territorial_4,'<img src="legend/cdmx09ent_3.png" /> cdmx — 09ent': layer_cdmx09ent_3,'<img src="legend/SECCION_2.png" /> SECCION': layer_SECCION_2,'<img src="legend/alcaldiasalcaldias_cdmx_1.png" /> alcaldias — alcaldias_cdmx': layer_alcaldiasalcaldias_cdmx_1,"Carto Positron": layer_CartoPositron_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Seccionesprioritarias_4.png" /> Secciones prioritarias': layer_Seccionesprioritarias_4,'<img src="legend/Cordinaciones_3.png" /> Cordinaciones': layer_Cordinaciones_3,'<img src="legend/Alcaldias_2.png" /> Alcaldias': layer_Alcaldias_2,'<img src="legend/LmiteCDMX_1.png" /> Límite CDMX': layer_LmiteCDMX_1,"Carto Positron": layer_CartoPositron_0,}).addTo(map);
         setBounds();
-        resetLabels([layer_SECCION_2]);
+        resetLabels([layer_Seccionesprioritarias_4]);
         map.on("zoomend", function(){
-            resetLabels([layer_SECCION_2]);
+            resetLabels([layer_Seccionesprioritarias_4]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_SECCION_2]);
+            resetLabels([layer_Seccionesprioritarias_4]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_SECCION_2]);
+            resetLabels([layer_Seccionesprioritarias_4]);
         });
         </script>
     </body>
