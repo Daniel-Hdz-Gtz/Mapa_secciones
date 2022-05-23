@@ -8,6 +8,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -30,6 +31,7 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
+        <script src="js/leaflet-search.js"></script>
         <script src="data/LmiteCDMX_1.js"></script>
         <script src="data/Alcaldias_2.js"></script>
         <script src="data/Cordinaciones_3.js"></script>
@@ -42,7 +44,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[19.032162472052484,-99.62849899397855],[19.61081993535329,-98.67281650088987]]);
+        }).fitBounds([[19.383945684727635,-99.33496778839532],[19.673274416377765,-98.85712654185141]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -277,6 +279,13 @@
         var baseMaps = {};
         L.control.layers(baseMaps,{'<img src="legend/Seccionesprioritarias_4.png" /> Secciones prioritarias': layer_Seccionesprioritarias_4,'<img src="legend/Cordinaciones_3.png" /> Cordinaciones': layer_Cordinaciones_3,'<img src="legend/Alcaldias_2.png" /> Alcaldias': layer_Alcaldias_2,'<img src="legend/LmiteCDMX_1.png" /> Límite CDMX': layer_LmiteCDMX_1,"Carto Positron": layer_CartoPositron_0,}).addTo(map);
         setBounds();
+        map.addControl(new L.Control.Search({
+            layer: layer_Seccionesprioritarias_4,
+            initial: false,
+            hideMarkerOnCollapse: true,
+            propertyName: 'SECCION'}));
+        document.getElementsByClassName('search-button')[0].className +=
+         ' fa fa-binoculars';
         resetLabels([layer_Seccionesprioritarias_4]);
         map.on("zoomend", function(){
             resetLabels([layer_Seccionesprioritarias_4]);
