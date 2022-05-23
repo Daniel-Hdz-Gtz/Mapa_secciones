@@ -33,6 +33,7 @@
         <script src="data/alcaldiasalcaldias_cdmx_1.js"></script>
         <script src="data/SECCION_2.js"></script>
         <script src="data/cdmx09ent_3.js"></script>
+        <script src="data/sec_territorial_4.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -41,7 +42,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[19.029439529379154,-99.62127020865393],[19.598771156874015,-98.64863400442127]]);
+        }).fitBounds([[19.032162472052484,-99.62849899397855],[19.61081993535329,-98.67281650088987]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -220,6 +221,62 @@
         });
         bounds_group.addLayer(layer_cdmx09ent_3);
         map.addLayer(layer_cdmx09ent_3);
+        function pop_sec_territorial_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>delegacion</strong><br />' + (feature.properties['delegacion'] !== null ? autolinker.link(feature.properties['delegacion'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nombre'] !== null ? autolinker.link(feature.properties['nombre'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['zona'] !== null ? autolinker.link(feature.properties['zona'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_sec_territorial_4_0() {
+            return {
+                pane: 'pane_sec_territorial_4',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_sec_territorial_4');
+        map.getPane('pane_sec_territorial_4').style.zIndex = 404;
+        map.getPane('pane_sec_territorial_4').style['mix-blend-mode'] = 'normal';
+        var layer_sec_territorial_4 = new L.geoJson(json_sec_territorial_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_sec_territorial_4',
+            layerName: 'layer_sec_territorial_4',
+            pane: 'pane_sec_territorial_4',
+            onEachFeature: pop_sec_territorial_4,
+            style: style_sec_territorial_4_0,
+        });
+        bounds_group.addLayer(layer_sec_territorial_4);
+        map.addLayer(layer_sec_territorial_4);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/sec_territorial_4.png" /> sec_territorial': layer_sec_territorial_4,'<img src="legend/cdmx09ent_3.png" /> cdmx — 09ent': layer_cdmx09ent_3,'<img src="legend/SECCION_2.png" /> SECCION': layer_SECCION_2,'<img src="legend/alcaldiasalcaldias_cdmx_1.png" /> alcaldias — alcaldias_cdmx': layer_alcaldiasalcaldias_cdmx_1,"Carto Positron": layer_CartoPositron_0,}).addTo(map);
         setBounds();
         resetLabels([layer_SECCION_2]);
         map.on("zoomend", function(){
