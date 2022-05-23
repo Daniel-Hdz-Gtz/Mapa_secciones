@@ -1,2 +1,2 @@
 # Mapa_secciones
-https://rawcdn.githack.com/Daniel-Hdz-Gtz/Mapa_secciones/31d194f7ecc7c2949f663d456b297e2fd756d77f/index.html
+https://rawcdn.githack.com/Daniel-Hdz-Gtz/Mapa_secciones/eccd9762d1e62414306280153b86de51bfbeb3a8/index.html
